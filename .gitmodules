@@ -1,0 +1,9 @@
+[submodule "vim-fugitive"]
+	path = vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-airline"]
+	path = vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim-coffee-script"]
+	path = vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
