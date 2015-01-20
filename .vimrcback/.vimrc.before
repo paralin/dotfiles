@@ -1,0 +1,2 @@
+autocmd FileType coffee set smartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType proto set smartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
