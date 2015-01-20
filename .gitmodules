@@ -10,3 +10,18 @@
 [submodule "YouCompleteMe"]
 	path = YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim-jade"]
+	path = vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "vim-protobuf"]
+	path = vim-protobuf
+	url = https://github.com/uarun/vim-protobuf.git
+[submodule "vim-tmux-navigator"]
+	path = vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "less.vim"]
+	path = less.vim
+	url = https://github.com/vim-scripts/less.vim.git
+[submodule "wolfpack"]
+	path = wolfpack
+	url = https://github.com/carlson-erik/wolfpack.git
