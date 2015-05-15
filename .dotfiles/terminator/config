@@ -1,0 +1,28 @@
+[global_config]
+  geometry_hinting = False
+  window_state = maximise
+  borderless = True
+  title_inactive_bg_color = "#333233"
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#383838:#a95551:#666666:#a98051:#657d3e:#767676:#c9c9c9:#d0b8a3:#474747:#a97775:#8c8c8c:#a99175:#98bd5e:#a3a3a3:#dcdcdc:#d8c8bb"
+    background_image = None
+    custom_command = zsh
+    use_system_font = False
+    cursor_color = "#c0bcbc"
+    foreground_color = "#c0bcbc"
+    use_custom_command = True
+    show_titlebar = False
+    font = PragmataPro for Powerline 16
+    background_color = "#262626"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
