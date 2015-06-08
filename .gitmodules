@@ -25,3 +25,6 @@
 [submodule "wolfpack"]
 	path = wolfpack
 	url = https://github.com/carlson-erik/wolfpack.git
+[submodule "vim-csharp"]
+	path = vim-csharp
+	url = git://github.com/OrangeT/vim-csharp.git

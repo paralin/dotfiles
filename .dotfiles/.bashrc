@@ -116,4 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/.powerline/scripts"
+export PATH="$PATH:$HOME/.powerline/scripts"
