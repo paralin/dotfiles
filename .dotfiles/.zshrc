@@ -44,10 +44,19 @@ unalias rm
 
 alias irc="TERM=screen-256color screen irssi"
 
-alias openprivate="ecryptfs-mount-private"
-alias closeprivate="ecryptfs-umount-private"
-
-alias dokku="ssh dokku "
-alias fpl="ssh fpl "
-
 export PATH="$PATH:$HOME/.powerline/scripts"
+
+export NVM_DIR="/home/paralin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/home/paralin/.nvm/versions/io.js/v2.0.2/lib/node_modules
+
+source /opt/qt54/bin/qt54-env.sh
+export LD_LIBRARY_PATH=""
+export DISPLAY=":0"
+
+alias gpgsign="gpg --encrypt --sign --armor -r"
+
+eval "$(thefuck-alias)"
