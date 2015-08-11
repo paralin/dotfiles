@@ -28,3 +28,15 @@
 [submodule "vim-csharp"]
 	path = vim-csharp
 	url = git://github.com/OrangeT/vim-csharp.git
+[submodule "taglist.vim"]
+	path = taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "YCM-Generator"]
+	path = YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "emmet-vim"]
+	path = emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "github-issues.vim"]
+	path = github-issues.vim
+	url = https://github.com/jaxbot/github-issues.vim.git
