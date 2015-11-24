@@ -40,3 +40,6 @@
 [submodule "github-issues.vim"]
 	path = github-issues.vim
 	url = https://github.com/jaxbot/github-issues.vim.git
+[submodule "omnisharp-vim"]
+	path = omnisharp-vim
+	url = https://github.com/OmniSharp/omnisharp-vim.git
