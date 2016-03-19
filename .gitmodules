@@ -37,9 +37,15 @@
 [submodule "emmet-vim"]
 	path = emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
-[submodule "github-issues.vim"]
-	path = github-issues.vim
-	url = https://github.com/jaxbot/github-issues.vim.git
 [submodule "omnisharp-vim"]
 	path = omnisharp-vim
-	url = https://github.com/OmniSharp/omnisharp-vim.git
+	url = git@github.com:OmniSharp/omnisharp-vim.git
+[submodule "vim-pandoc-syntax"]
+	path = vim-pandoc-syntax
+	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
+[submodule "vim-pandoc"]
+	path = vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "typescript-vim"]
+	path = typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
