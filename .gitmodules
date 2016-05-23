@@ -27,7 +27,7 @@
 	url = https://github.com/carlson-erik/wolfpack.git
 [submodule "vim-csharp"]
 	path = vim-csharp
-	url = git://github.com/OrangeT/vim-csharp.git
+	url = https://github.com/OrangeT/vim-csharp.git
 [submodule "taglist.vim"]
 	path = taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
@@ -37,9 +37,6 @@
 [submodule "emmet-vim"]
 	path = emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
-[submodule "omnisharp-vim"]
-	path = omnisharp-vim
-	url = git@github.com:OmniSharp/omnisharp-vim.git
 [submodule "vim-pandoc-syntax"]
 	path = vim-pandoc-syntax
 	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
@@ -49,3 +46,6 @@
 [submodule "typescript-vim"]
 	path = typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim-jsx"]
+	path = vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
