@@ -10,18 +10,12 @@
 [submodule "YouCompleteMe"]
 	path = YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "vim-jade"]
-	path = vim-jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "vim-protobuf"]
 	path = vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
 [submodule "vim-tmux-navigator"]
 	path = vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
-[submodule "less.vim"]
-	path = less.vim
-	url = https://github.com/vim-scripts/less.vim.git
 [submodule "wolfpack"]
 	path = wolfpack
 	url = https://github.com/carlson-erik/wolfpack.git
@@ -34,18 +28,12 @@
 [submodule "YCM-Generator"]
 	path = YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
-[submodule "emmet-vim"]
-	path = emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
 [submodule "vim-pandoc-syntax"]
 	path = vim-pandoc-syntax
 	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
 [submodule "vim-pandoc"]
 	path = vim-pandoc
 	url = git@github.com:vim-pandoc/vim-pandoc.git
-[submodule "typescript-vim"]
-	path = typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim-jsx"]
 	path = vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
