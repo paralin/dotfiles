@@ -22,6 +22,12 @@ if [ ! -d ~/.powerline ]; then
   pushd ~/.powerline && \
     git checkout 6e2e0b2f9221fbff117be3d190f9293b40ba64cd && \
     popd
+
+  if [ -d ~/.powerline/powerline/config_files ]; then
+    rm -rf ~/.powerline/powerline/config_files
+  fi
+  mkdir -p ~/.powerline/powerline/config_files
+  cp -r ../powerline-config/* ~/.powerline/powerline/config_files/
 fi
 
 echo "Updating submodules..."
