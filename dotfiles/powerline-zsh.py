@@ -123,7 +123,7 @@ def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False):
 
     names = cwd.split('/')
     if len(names) > maxdepth:
-        names = names[:2] + ['⋯ '] + names[2 - maxdepth:]
+        names = names[:1] + ['⋯ '] + names[2 - maxdepth:]
 
     if not cwd_only:
         for n in names[:-1]:
@@ -312,7 +312,7 @@ if __name__ == '__main__':
     add_virtual_env_segment(p, cwd)
     #p.append(Segment(' \\u ', 250, 240))
     #p.append(Segment(' \\h ', 250, 238))
-    add_cwd_segment(p, cwd, 5, args.cwd_only)
+    add_cwd_segment(p, cwd, 4, args.cwd_only)
     add_repo_segment(p, cwd)
     add_root_indicator(p, args.prev_error)
     if sys.version_info[0] < 3:

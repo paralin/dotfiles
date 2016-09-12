@@ -1,0 +1,52 @@
+export LANG='en_US.UTF-8'
+# export PATH=/usr/local/bin:$PATH
+
+export EDITOR='vim'
+export GIT_EDITOR=vim
+
+# Eliminate delay for vim mode
+export KEYTIMEOUT=1
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
+
+
+function _update_ps1()
+{
+  export PROMPT="$(~/.powerline-zsh.py $?)"
+}
+
+precmd()
+{
+  _update_ps1
+}
+
+alias base16="od -An -tx1 | tr -d \" \n\" ; echo"
+
+source ~/.antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle common-aliases
+
+antigen apply
+
+unalias rm
+unalias t
+
+export PATH="$PATH:$HOME/.powerline/scripts"
+
+alias gpgsign="gpg --encrypt --sign --armor -r"
+
+# full terminal colors
+TERM=xterm-256color
+export TERM
+export GPG_TTY=$(tty)
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+# Shortcut for xclip clipboard
+alias xcc='xclip -selection clipboard'

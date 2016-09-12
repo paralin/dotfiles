@@ -1,0 +1,42 @@
+colorscheme wolfpack
+color wolfpack
+set mouse=a
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let Tlist_Use_Right_Window   = 1
+
+function DeleteHiddenBuffers()
+  let tpbl=[]
+  call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+  for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+    silent execute 'bwipeout' buf
+  endfor
+endfunction
+
+au FileType cs setl sw=4 sts=4 et
+let g:ycm_confirm_extra_conf = 0
+
+let g:OmniSharp_server_type = 'v1'
+let g:OmniSharp_server_type = 'roslyn'
+
+set rnu
+
+set timeoutlen=1000 ttimeoutlen=0
+
+autocmd FileType ts set autoread
+let g:syntastic_typescript_tsc_fname = ''
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_go_checkers = ["go", "gofmt", "govet"]
+let g:syntastic_typescript_checkers = ["tslint"]
+let g:syntastic_html_checkers = []
+let g:jsx_ext_required = 0
+let g:syntastic_typescript_tslint_args = "--type-check"

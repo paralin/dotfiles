@@ -1,1 +1,0 @@
-/home/paralin/.vim/janus/vim/vimrc

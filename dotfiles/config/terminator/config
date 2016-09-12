@@ -1,5 +1,5 @@
 [global_config]
-  geometry_hinting = False
+  enabled_plugins = APTURLHandler, LaunchpadBugURLHandler
   window_state = maximise
   borderless = True
   title_inactive_bg_color = "#333233"
@@ -15,14 +15,14 @@
     foreground_color = "#c0bcbc"
     use_custom_command = True
     show_titlebar = False
-    font = PragmataPro for Powerline 16
+    font = PragmataPro for Powerline 18
     background_color = "#262626"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
