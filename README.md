@@ -2,14 +2,14 @@
 
 My vim/zsh/tmux/powerline/airline dream setup.
 
-To setup:
+To get started:
 
 ```
 $ git clone https://github.com/paralin/dotfiles.git ~/.janus
 $ cd ~/.janus && ./setup_all.sh
 ```
 
-![](http://i.imgur.com/Bt0vfz7.png)
+![](http://i.imgur.com/fFqTBgR.png)
 
 Dependencies
 ============
@@ -22,3 +22,5 @@ This requires the following:
  - `go`
  - `bison`
  - `terminator`
+
+... and maybe others.
