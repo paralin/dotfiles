@@ -37,6 +37,8 @@ for f in $(find -type f | sed 's/^..//'); do
 done
 popd
 
+sed -i -e "s\$REPLACE_ME_HOME\$$HOME\$g" ~/.tmux.conf
+
 echo "Copying fonts..."
 mkdir -p ~/.fonts
 FONTNAME="UHJhZ21hdGFQcm8gZm9yIFBvd2VybGluZS50dGYK"

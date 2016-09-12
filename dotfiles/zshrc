@@ -1,5 +1,4 @@
 export LANG='en_US.UTF-8'
-# export PATH=/usr/local/bin:$PATH
 
 export EDITOR='vim'
 export GIT_EDITOR=vim
@@ -36,6 +35,7 @@ antigen apply
 unalias rm
 unalias t
 
+export PYTHONPATH="$PYTHONPATH:$HOME/.powerline"
 export PATH="$PATH:$HOME/.powerline/scripts"
 
 alias gpgsign="gpg --encrypt --sign --armor -r"
