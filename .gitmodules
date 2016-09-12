@@ -30,10 +30,10 @@
 	url = https://github.com/rdnetto/YCM-Generator.git
 [submodule "vim-pandoc-syntax"]
 	path = vim-pandoc-syntax
-	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
 [submodule "vim-pandoc"]
 	path = vim-pandoc
-	url = git@github.com:vim-pandoc/vim-pandoc.git
+	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule "typescript-vim"]
 	path = typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
