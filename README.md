@@ -2,6 +2,8 @@
 
 My vim/zsh/tmux/powerline/airline dream setup.
 
+See my [server dotfiles](https://github.com/paralin/serverdotfiles) for remote SSH servers you use.
+
 To get started:
 
 ```
