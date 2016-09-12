@@ -30,6 +30,9 @@ for f in $(find -type f | sed 's/^..//'); do
   fi
   # copy in new
   echo "copying in ${f}..."
+  if [ -d $dirpath ]; then
+    mkdir -p ~/.${dirpath}
+  fi
   cp -r ${f} $orig
 done
 popd
