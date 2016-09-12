@@ -34,6 +34,18 @@
 [submodule "vim-pandoc"]
 	path = vim-pandoc
 	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "typescript-vim"]
+	path = typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim-matchit"]
+	path = vim-matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "closetag.vim"]
+	path = closetag.vim
+	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "delimitMate"]
+	path = delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim-jsx"]
 	path = vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
