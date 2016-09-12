@@ -19,3 +19,6 @@ This requires the following:
  - `build-essential`
  - `python-dev`
  - `cmake`
+ - `go`
+ - `bison`
+ - `terminator`
