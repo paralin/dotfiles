@@ -24,6 +24,8 @@ This requires the following:
  - `golang`
  - `bison`
  - `terminator`
+ - `zsh`
+ - `tmux`
  - `node` - (hint: use nvm)
 
 ... and maybe others.
