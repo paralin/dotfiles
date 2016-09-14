@@ -37,6 +37,13 @@ for f in $(find -type f | sed 's/^..//'); do
 done
 popd
 
+if [ -f ~/.npm/install.sh ]; then
+  echo "Restoring npm..."
+  pushd ~/.npm
+  ./install.sh
+  popd
+fi
+
 sed -i -e "s\$REPLACE_ME_HOME\$$HOME\$g" ~/.tmux.conf
 
 echo "Copying fonts..."
