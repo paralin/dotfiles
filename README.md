@@ -26,6 +26,7 @@ This requires the following:
  - `terminator`
  - `zsh`
  - `tmux`
+ - `exuberant-ctags`
  - `node` - (hint: use nvm)
 
 ... and maybe others.
