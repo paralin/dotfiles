@@ -21,8 +21,9 @@ This requires the following:
  - `build-essential`
  - `python-dev`
  - `cmake`
- - `go`
+ - `golang`
  - `bison`
  - `terminator`
+ - `node` - (hint: use nvm)
 
 ... and maybe others.
