@@ -110,10 +110,13 @@ class Segment:
             self.separator))
 
 
-def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False):
+def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False, repo_root=None):
     #powerline.append(' \\w ', 15, 237)
     home = os.getenv('HOME')
     cwd = os.getenv('PWD')
+
+    if repo_root is not None:
+        cwd = cwd.replace(os.path.dirname(repo_root), '⋯', 1)
 
     if cwd.find(home) == 0:
         cwd = cwd.replace(home, '~', 1)
@@ -262,6 +265,26 @@ def add_repo_segment(powerline, cwd):
         except OSError:
             pass
 
+def get_git_root(powerline, cwd):
+    p = subprocess.Popen(['git', 'rev-parse', '--show-toplevel'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = p.communicate()
+
+    if 'Not a git repo' in err.decode(encoding):
+        return None
+    return out.decode(encoding).rstrip()
+
+def get_repo_root(powerline, cwd):
+    # TODO: svn root, hg root
+    for do_get_repo_root in [get_git_root]:
+        try:
+            repo_root = do_get_repo_root(p, cwd)
+            if repo_root is not None:
+                return repo_root
+        except subprocess.CalledProcessError:
+            pass
+        except OSError:
+            pass
+    return None
 
 def add_virtual_env_segment(powerline, cwd):
     env = os.getenv("VIRTUAL_ENV")
@@ -309,10 +332,11 @@ if __name__ == '__main__':
 
     p = Powerline(mode='default')
     cwd = get_valid_cwd()
+    repo_root = get_repo_root(p, cwd)
     add_virtual_env_segment(p, cwd)
     #p.append(Segment(' \\u ', 250, 240))
     #p.append(Segment(' \\h ', 250, 238))
-    add_cwd_segment(p, cwd, 4, args.cwd_only)
+    add_cwd_segment(p, cwd, 4, args.cwd_only, repo_root)
     add_repo_segment(p, cwd)
     add_root_indicator(p, args.prev_error)
     if sys.version_info[0] < 3:
