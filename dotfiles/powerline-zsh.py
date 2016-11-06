@@ -116,7 +116,7 @@ def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False, repo_root=None):
     cwd = os.getenv('PWD')
 
     if repo_root is not None:
-        cwd = cwd.replace(os.path.dirname(repo_root), '⋯', 1)
+        cwd = cwd.replace(repo_root, ' ' + os.path.basename(repo_root), 1)
 
     if cwd.find(home) == 0:
         cwd = cwd.replace(home, '~', 1)
