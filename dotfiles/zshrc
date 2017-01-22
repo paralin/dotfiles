@@ -23,15 +23,6 @@ precmd()
 
 alias base16="od -An -tx1 | tr -d \" \n\" ; echo"
 
-source ~/.antigen.zsh
-
-antigen use oh-my-zsh
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle common-aliases
-
-antigen apply
-
 unalias rm
 unalias t
 
@@ -50,3 +41,12 @@ bindkey '^R' history-incremental-search-backward
 
 # Shortcut for xclip clipboard
 alias xcc='xclip -selection clipboard'
+
+source ~/.antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle common-aliases
+
+antigen apply
