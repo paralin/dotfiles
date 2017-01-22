@@ -49,7 +49,7 @@ sed -i -e "s\$REPLACE_ME_HOME\$$HOME\$g" ~/.tmux.conf
 echo "Copying fonts..."
 mkdir -p ~/.fonts
 FONTNAME="UHJhZ21hdGFQcm8gZm9yIFBvd2VybGluZS50dGYK"
-FONTDEST="\"~/.fonts/$(echo $FONTNAME | base64 -d)\""
+FONTDEST="~/.fonts/$(echo $FONTNAME | base64 -d)"
 cp ../fonts/pp.ttf $FONTDEST
 
 echo "Done! You probably want to set up Janus and compile relevant completers. Use ./setup_janus.sh to do that."
