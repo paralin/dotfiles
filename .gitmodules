@@ -46,9 +46,6 @@
 [submodule "vim-jsx"]
 	path = vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
-[submodule "alchemist.vim"]
-	path = alchemist.vim
-	url = https://github.com/slashmili/alchemist.vim.git
 [submodule "vim-graphql"]
 	path = vim-graphql
 	url = https://github.com/jparise/vim-graphql
