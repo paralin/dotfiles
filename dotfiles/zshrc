@@ -1,5 +1,4 @@
 export LANG='en_US.UTF-8'
-
 export EDITOR='vim'
 export GIT_EDITOR=vim
 
@@ -9,7 +8,6 @@ export KEYTIMEOUT=1
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
-
 
 function _update_ps1()
 {
@@ -23,17 +21,8 @@ precmd()
 
 alias base16="od -An -tx1 | tr -d \" \n\" ; echo"
 
-unalias rm
-unalias t
-
-export PYTHONPATH="$PYTHONPATH:$HOME/.powerline"
-export PATH="$PATH:$HOME/.powerline/scripts"
-
-alias gpgsign="gpg --encrypt --sign --armor -r"
-
 # full terminal colors
-TERM=xterm-256color
-export TERM
+export TERM=screen-256color
 export GPG_TTY=$(tty)
 
 bindkey -v
@@ -42,11 +31,45 @@ bindkey '^R' history-incremental-search-backward
 # Shortcut for xclip clipboard
 alias xcc='xclip -selection clipboard'
 
-source ~/.antigen.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-antigen use oh-my-zsh
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle common-aliases
+# Tool to quickly get a go coverage report
+gocover() {
+  f=cover.out; if [ -f $f ]; then rm $f; fi; go test -coverprofile $f && go tool cover -html $f
+}
 
-antigen apply
+bpr() {
+  if [ -z "$1" ]; then
+    echo "usage: bpr feat-my-branch"
+    return 1
+  fi
+  git checkout -b $1
+  git push -u origin $1
+  open-pr
+}
+
+export GOPATH="$HOME/Documents/goworkspace"
+export PATH="$PATH:$GOPATH/bin"
+export PYTHONPATH="$PYTHONPATH:$HOME/.powerline:$HOME/.pypath"
+export PATH="$PATH:$HOME/.powerline/scripts"
+
+alias gpgsign="gpg --encrypt --sign --armor -r"
+alias yr='yarn run'
+alias grep='grep --color'
+alias opr='open-pr'
+
+source <(antibody init)
+antibody bundle < ~/.antibody-bundles.txt
+
+source ~/.ls-colors.zsh
+
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+# HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory
+
+unset LD_LIBRARY_PATH

@@ -39,23 +39,8 @@ check_go() {
     return 0
   fi
 
-  echo " - go root found: $GOROOT"
-  echo " - checking cgo works..."
-  if ! gcc -c -fPIC -o ./go/lib/lib.o ./go/lib/lib.c && \
-       gcc -c -fPIC -shared -o ./go/liblib.so ./go/lib/lib.c; then
-    echo " ! gcc failed to compile cgo test, skipping go support."
-    return 0
-  fi
-
-  pushd ./go
-  if ! GOVERSION=$(LD_LIBRARY_PATH=. go run ./check_cgo.go); then
-    echo " ! cgo check failed, skipping go support"
-    popd
-    return 0
-  fi
-  popd
-
   echo " - go looks OK, enabling support"
+  go get -u -v github.com/getantibody/antibody
   YCM_FLAGS="$YCM_FLAGS --gocode-completer"
   return 0
 }
