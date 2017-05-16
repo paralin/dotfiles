@@ -4,7 +4,6 @@
 from __future__ import print_function
 from __future__ import unicode_literals
 import os
-import string
 import subprocess
 import sys
 import re
@@ -192,8 +191,6 @@ def get_git_status():
             has_untracked_files = True
     return has_pending_commits, has_untracked_files, origin_position
 
-def set_tmux_window_name(winname):
-    subprocess.Popen(['tmux', 'rename-window', winname])
 
 def add_git_segment(powerline, cwd):
     #cmd = "git branch 2> /dev/null | grep -e '\\*'"
@@ -201,7 +198,6 @@ def add_git_segment(powerline, cwd):
     out, err = p.communicate()
 
     if 'Not a git repo' in err.decode(encoding):
-        # set_tmux_window_name("''")
         return False
 
     if out:
@@ -221,11 +217,6 @@ def add_git_segment(powerline, cwd):
     if has_pending_commits:
         bg = Color.REPO_DIRTY_BG
         fg = Color.REPO_DIRTY_FG
-
-    p = subprocess.Popen(['git', 'rev-parse', '--show-toplevel'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    out2, err2 = p.communicate()
-    out2 = string.split(string.strip(out2), '/')
-    set_tmux_window_name(out2[len(out2)-1])
 
     powerline.append(Segment(powerline, ' %s ' % branch, fg, bg))
     return True
@@ -267,7 +258,7 @@ def add_svn_segment(powerline, cwd):
 def add_repo_segment(powerline, cwd):
     for add_repo_segment in [add_git_segment, add_svn_segment, add_hg_segment]:
         try:
-            if add_repo_segment(powerline, cwd):
+            if add_repo_segment(p, cwd):
                 return
         except subprocess.CalledProcessError:
             pass
